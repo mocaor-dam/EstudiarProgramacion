@@ -45,22 +45,21 @@ public class Principal {
                     }
                 }
             } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
+                System.out.println(e.getMessage());            }
         }
 
     }
+    public static void interfaz() {
+        System.out.println("\n=== Bienvenido al menu de gestion del concesionario ===");
+        System.out.println("1. Cargar informacion desde fichero CSV");
+        System.out.println("2. Insertar un coche en una posición concreta");
+        System.out.println("3. Ordenar el fichero por matrícula");
+        System.out.println("4. Borrar un registro (por Matrícula o Posición)");
+        System.out.println("5. Modificar el registro de una posición dada");
+        System.out.println("6. Mostrar todos los registros de la BBDD");
+        System.out.println("7. Salir");
+        System.out.print("Elige una opción (1-7): ");
+    }
+
 }
 
-public static void interfaz() {
-    System.out.println("\n=== Bienvenido al menu de gestion del concesionario ===");
-    System.out.println("1. Cargar informacion desde fichero CSV");
-    System.out.println("2. Insertar un coche en una posición concreta");
-    System.out.println("3. Ordenar el fichero por matrícula");
-    System.out.println("4. Borrar un registro (por Matrícula o Posición)");
-    System.out.println("5. Modificar el registro de una posición dada");
-    System.out.println("6. Mostrar todos los registros de la BBDD");
-    System.out.println("7. Salir");
-    System.out.print("Elige una opción (1-7): ");
-}
-}
