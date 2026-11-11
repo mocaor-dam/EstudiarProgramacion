@@ -39,4 +39,25 @@ public class GestorDeFichero {
 
         return cadena;
     }
+
+    public static void escribirRegistro(RandomAccessFile raf, String matricula, String marca, String modelo) throws IOException {
+        escribirCampo(raf, matricula, MAX_BYTE_MATRICULA);
+        escribirCampo(raf, marca, MAX_BYTE_MARCA);
+        escribirCampo(raf, modelo, MAX_BYTE_MODELO);
+    }
+
+    public static String[] leerRegistro(RandomAccessFile raf) throws IOException {
+        String[] registros = new String[3];
+
+        registros[0] = leerCampo(raf, MAX_BYTE_MATRICULA);
+        registros[1] = leerCampo(raf, MAX_BYTE_MARCA);
+        registros[2] = leerCampo(raf, MAX_BYTE_MODELO);
+
+        return registros;
+    }
+
+    public static int obtenerNumRegistros(RandomAccessFile raf) throws IOException {
+        int numRegistro = (int) (raf.length()/TAM_REGISTRO);
+        return numRegistro;
+    }
 }
